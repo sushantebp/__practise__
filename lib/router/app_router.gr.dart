@@ -25,3 +25,51 @@ class HomeRoute extends PageRouteInfo<void> {
     },
   );
 }
+
+/// generated route for
+/// [ProductDetailsPage]
+class ProductDetailsRoute extends PageRouteInfo<ProductDetailsRouteArgs> {
+  ProductDetailsRoute({Key? key, int? id, List<PageRouteInfo>? children})
+    : super(
+        ProductDetailsRoute.name,
+        args: ProductDetailsRouteArgs(key: key, id: id),
+        rawQueryParams: {'id': id},
+        initialChildren: children,
+      );
+
+  static const String name = 'ProductDetailsRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final queryParams = data.queryParams;
+      final args = data.argsAs<ProductDetailsRouteArgs>(
+        orElse: () => ProductDetailsRouteArgs(id: queryParams.optInt('id')),
+      );
+      return ProductDetailsPage(key: args.key, id: args.id);
+    },
+  );
+}
+
+class ProductDetailsRouteArgs {
+  const ProductDetailsRouteArgs({this.key, this.id});
+
+  final Key? key;
+
+  final int? id;
+
+  @override
+  String toString() {
+    return 'ProductDetailsRouteArgs{key: $key, id: $id}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! ProductDetailsRouteArgs) return false;
+    return key == other.key && id == other.id;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ id.hashCode;
+}

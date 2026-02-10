@@ -9,6 +9,33 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(routerConfig: _router.config());
+    return MaterialApp.router(
+      title: 'Flutter Deep Linking',
+      routerConfig: _router.config(
+        // deepLinkTransformer: (uri) {
+        //   if (uri.path.startsWith('/products')) {
+        //     return SynchronousFuture(uri);
+        //   }
+        //   return SynchronousFuture(uri);
+        // },
+        //
+        // deepLinkBuilder: (deepLink) {
+        //   if (deepLink.path.isEmpty || deepLink.path == '/') {
+        //     return deepLink;
+        //   }
+        //
+        //   // Logic: Only allow navigation if it starts with our expected paths
+        //   if (deepLink.path.startsWith('/products')) {
+        //     return deepLink;
+        //   }
+        //
+        //   // Fallback to Home for unknown links
+        //   return DeepLink.defaultPath;
+        // },
+        placeholder: (context) => const Scaffold(
+          body: Center(child: CircularProgressIndicator.adaptive()),
+        ),
+      ),
+    );
   }
 }

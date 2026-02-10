@@ -38,6 +38,7 @@ dependencies:
   auto_route: ^11.1.0
   injectable: ^2.7.1+4
   get_it: ^9.2.0
+  app_links: ^7.0.0
 
 dev_dependencies:
   flutter_test:
