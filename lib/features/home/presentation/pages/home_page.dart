@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:app_links/app_links.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:practise/features/home/presentation/widgets/random_widget.dart';
 import 'package:practise/router/app_router.dart';
 
 @RoutePage()
@@ -63,7 +64,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Home')),
-      body: const Center(child: Text('Deep Link Listener Active')),
+      body: Column(children: [RandomWidget()]),
     );
   }
 }
