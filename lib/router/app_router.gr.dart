@@ -11,6 +11,22 @@
 part of 'app_router.dart';
 
 /// generated route for
+/// [DrawPage]
+class DrawRoute extends PageRouteInfo<void> {
+  const DrawRoute({List<PageRouteInfo>? children})
+    : super(DrawRoute.name, initialChildren: children);
+
+  static const String name = 'DrawRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const DrawPage();
+    },
+  );
+}
+
+/// generated route for
 /// [HomePage]
 class HomeRoute extends PageRouteInfo<void> {
   const HomeRoute({List<PageRouteInfo>? children})
