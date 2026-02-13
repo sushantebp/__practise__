@@ -43,6 +43,22 @@ class HomeRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [OcrPage]
+class OcrRoute extends PageRouteInfo<void> {
+  const OcrRoute({List<PageRouteInfo>? children})
+    : super(OcrRoute.name, initialChildren: children);
+
+  static const String name = 'OcrRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const OcrPage();
+    },
+  );
+}
+
+/// generated route for
 /// [ProductDetailsPage]
 class ProductDetailsRoute extends PageRouteInfo<ProductDetailsRouteArgs> {
   ProductDetailsRoute({Key? key, int? id, List<PageRouteInfo>? children})
