@@ -3,8 +3,9 @@ import 'dart:async';
 import 'package:app_links/app_links.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:practise/features/home/presentation/widgets/random_widget.dart';
 import 'package:practise/router/app_router.dart';
+
+import '../widgets/random_widget.dart';
 
 @RoutePage()
 class HomePage extends StatefulWidget {
@@ -60,11 +61,25 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  final List<String> _vegetables = [
+    'Cauliflower',
+    'Potato',
+    'Cabbage',
+    'Radish',
+    'Cucumber',
+  ];
+  String _veg = 'Tomato';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Home')),
-      body: Column(children: [RandomWidget()]),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [const SizedBox(height: 22), const RandomWidget()],
+        ),
+      ),
     );
   }
 }
